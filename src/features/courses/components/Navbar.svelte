@@ -27,7 +27,7 @@
   <div class="flex items-center gap-3">
     {#if $authProfile}
       <a href="/profile" class="flex items-center gap-2 text-sm font-medium text-slate-700">
-        <img src={resolveAssetUrl($authProfile.photo)} alt={$authProfile.name} class="h-8 w-8 rounded-full object-cover" />
+        <img src={resolveAssetUrl($authProfile.photo)} alt="" class="h-8 w-8 rounded-full object-cover" />
         <span class="hidden sm:inline">{$authProfile.name}</span>
       </a>
     {/if}

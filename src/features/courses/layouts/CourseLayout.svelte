@@ -11,6 +11,7 @@
   <Navbar onToggleSidebar={() => (sidebarOpen = !sidebarOpen)} />
   <Sidebar open={sidebarOpen} onClose={() => (sidebarOpen = false)} />
   <main class="pt-16 lg:pl-64">
+    <h1 class="sr-only">Portal Kursus Delcom</h1>
     <div class="mx-auto max-w-6xl p-4 sm:p-6">
       {@render children()}
     </div>

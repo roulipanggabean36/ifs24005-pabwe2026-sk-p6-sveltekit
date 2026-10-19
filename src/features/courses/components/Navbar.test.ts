@@ -27,7 +27,7 @@ describe("Navbar", () => {
       props: { onToggleSidebar: vi.fn() },
       setup: () => authProfile.set(sampleUser),
     });
-    expect(screen.getByAltText("Budi")).toBeInTheDocument();
+    expect(document.querySelector("img")).toHaveAttribute("src", expect.stringContaining("1.png"));
     expect(screen.getByText("Budi")).toBeInTheDocument();
   });
 
