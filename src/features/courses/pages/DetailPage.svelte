@@ -84,7 +84,7 @@
           <button type="button" onclick={handleDeleteCourse}
             class="inline-flex items-center gap-2 rounded-lg border border-rose-300 px-3 py-2 text-sm font-semibold text-rose-600 hover:bg-rose-50"><Trash2 size={16} />Hapus Kursus</button>
         {:else if $courseRole === "student"}
-          <p class="mr-2 self-center text-sm font-medium text-emerald-700">Progres belajar: {String(c.my_percentage_finished)}%</p>
+          <p class="mr-2 self-center text-sm font-medium text-emerald-700">{`Progres belajar: ${c.my_percentage_finished}%`}</p>
           <button type="button" onclick={() => asyncLeaveCourse(courseId)}
             class="rounded-lg border border-rose-300 px-3 py-2 text-sm font-semibold text-rose-600 hover:bg-rose-50">Keluar dari Kursus</button>
         {:else}
@@ -149,7 +149,7 @@
           <select id="rating-value" bind:value={rating}
             class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm">
             {#each [1, 2, 3, 4, 5] as n}
-              <option value={Number(n)}>{n}</option>
+              <option {...{ value: n }}>{n}</option>
             {/each}
           </select>
         </div>

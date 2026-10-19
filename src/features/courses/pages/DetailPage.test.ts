@@ -100,6 +100,23 @@ describe("DetailPage", () => {
     expect(screen.queryByRole("dialog")).toBeNull();
   });
 
+  it("pemilik mengirim form modal sampul dan modal konten", async () => {
+    const { asyncChangeCover, asyncAddContent } = await import("../states/coursesStore");
+    renderWithProviders(DetailPage, { props, setup: as(1, owner) });
+
+    await click(screen.getByRole("button", { name: "Ubah Sampul" }));
+    const file = new File(["x"], "sampul.png", { type: "image/png" });
+    await fireEvent.change(screen.getByLabelText("Berkas Sampul"), { target: { files: [file] } });
+    await click(screen.getByRole("button", { name: "Unggah" }));
+    await waitFor(() => expect(asyncChangeCover).toHaveBeenCalled());
+    await click(screen.getByLabelText("Tutup"));
+
+    await click(screen.getByRole("button", { name: "Tambah Konten" }));
+    await fireEvent.input(screen.getByLabelText("Judul"), { target: { value: "Bab Baru" } });
+    await fireEvent.input(screen.getByLabelText("Tautan YouTube"), { target: { value: "https://youtu.be/abc123" } });
+    await click(screen.getByRole("button", { name: "Simpan" }));
+    await waitFor(() => expect(asyncAddContent).toHaveBeenCalled());
+  });
   it("pemilik menghapus konten", async () => {
     renderWithProviders(DetailPage, { props, setup: as(1, owner) });
     await click(screen.getByLabelText("Hapus Intro"));
