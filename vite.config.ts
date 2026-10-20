@@ -13,6 +13,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       sveltekit({
+        inlineStyleThreshold: 100000,
         adapter: process.env.VERCEL ? adapterVercel() : adapter({
           envPrefix: "APP_",
           serverOptions: {
