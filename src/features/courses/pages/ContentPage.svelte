@@ -36,7 +36,7 @@
           class="h-full w-full" allowfullscreen></iframe>
       </div>
     {:else}
-      <p class="text-sm text-rose-600">Tautan YouTube tidak valid.</p>
+      <p class="text-sm text-rose-700">Tautan YouTube tidak valid.</p>
     {/if}
     <button type="button" onclick={() => asyncSetContentStatus(contentId, content.my_status_finished ? 0 : 1)}
       class="mt-5 rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">

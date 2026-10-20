@@ -70,7 +70,7 @@
       <div class="mt-4 flex flex-wrap items-center gap-5 text-sm text-slate-700">
         <span class="inline-flex items-center gap-1"><Users size={16} /> {String(c.students.length)} peserta</span>
         <span class="inline-flex items-center gap-1"><Video size={16} /> {String(c.total_contents)} konten</span>
-        <span class="inline-flex items-center gap-1 font-semibold text-amber-600"><Star size={16} /> {formatRating(c.avg_ratings)}</span>
+        <span class="inline-flex items-center gap-1 font-semibold text-amber-700"><Star size={16} /> {formatRating(c.avg_ratings)}</span>
       </div>
 
       <div class="mt-6 flex flex-wrap gap-2">
@@ -82,11 +82,11 @@
           <button type="button" onclick={() => openContentModal(null)}
             class="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700"><Plus size={16} />Tambah Konten</button>
           <button type="button" onclick={handleDeleteCourse}
-            class="inline-flex items-center gap-2 rounded-lg border border-rose-300 px-3 py-2 text-sm font-semibold text-rose-600 hover:bg-rose-50"><Trash2 size={16} />Hapus Kursus</button>
+            class="inline-flex items-center gap-2 rounded-lg border border-rose-300 px-3 py-2 text-sm font-semibold text-rose-700 hover:bg-rose-50"><Trash2 size={16} />Hapus Kursus</button>
         {:else if $courseRole === "student"}
           <p class="mr-2 self-center text-sm font-medium text-emerald-700">{`Progres belajar: ${c.my_percentage_finished}%`}</p>
           <button type="button" onclick={() => asyncLeaveCourse(courseId)}
-            class="rounded-lg border border-rose-300 px-3 py-2 text-sm font-semibold text-rose-600 hover:bg-rose-50">Keluar dari Kursus</button>
+            class="rounded-lg border border-rose-300 px-3 py-2 text-sm font-semibold text-rose-700 hover:bg-rose-50">Keluar dari Kursus</button>
         {:else}
           <button type="button" onclick={() => asyncJoinCourse(courseId)}
             class="rounded-lg bg-indigo-600 px-3 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Daftar Kursus</button>
@@ -116,7 +116,7 @@
               <button type="button" aria-label={`Ubah ${content.title}`} onclick={() => openContentModal(content)}
                 class="rounded-lg p-2 text-slate-500 hover:bg-slate-100"><Pencil size={16} /></button>
               <button type="button" aria-label={`Hapus ${content.title}`} onclick={() => asyncDeleteContent(courseId, content.id)}
-                class="rounded-lg p-2 text-rose-600 hover:bg-rose-50"><Trash2 size={16} /></button>
+                class="rounded-lg p-2 text-rose-700 hover:bg-rose-50"><Trash2 size={16} /></button>
             {/if}
           </li>
         {/each}
@@ -134,7 +134,7 @@
           <li class="rounded-lg bg-slate-50 p-3">
             <div class="flex items-center justify-between text-sm">
               <strong class="text-slate-900">{item.name}</strong>
-              <span class="inline-flex items-center gap-1 font-semibold text-amber-600"><Star size={14} /> {String(item.ratings)}</span>
+              <span class="inline-flex items-center gap-1 font-semibold text-amber-700"><Star size={14} /> {String(item.ratings)}</span>
             </div>
             <p class="mt-1 text-sm text-slate-600">{item.comment}</p>
           </li>

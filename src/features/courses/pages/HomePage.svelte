@@ -41,7 +41,7 @@
       <Plus size={16} /> Tambah Kursus
     </button>
     <button type="button" onclick={asyncDeleteAllCourses}
-      class="inline-flex items-center gap-2 rounded-lg border border-rose-300 px-4 py-2 text-sm font-semibold text-rose-600 hover:bg-rose-50">
+      class="inline-flex items-center gap-2 rounded-lg border border-rose-300 px-4 py-2 text-sm font-semibold text-rose-700 hover:bg-rose-50">
       <Trash2 size={16} /> Hapus Semua
     </button>
   </div>
@@ -82,12 +82,12 @@
               <span class="inline-flex items-center gap-1"><Users size={14} /> {String(item.students.length)} peserta</span>
               <span class="inline-flex items-center gap-1"><Video size={14} /> {String(item.total_contents)} konten</span>
             </div>
-            <p class="mt-2 text-xs font-semibold text-amber-600">{formatRating(item.avg_ratings)}</p>
+            <p class="mt-2 text-xs font-semibold text-amber-700">{formatRating(item.avg_ratings)}</p>
           </div>
         </a>
         {#if item.user_id === $profileId}
           <button type="button" aria-label={`Hapus ${item.title}`} onclick={() => asyncDeleteCourse(item.id)}
-            class="absolute right-2 top-2 rounded-lg bg-white/90 p-2 text-rose-600 shadow hover:bg-white">
+            class="absolute right-2 top-2 rounded-lg bg-white/90 p-2 text-rose-700 shadow hover:bg-white">
             <Trash2 size={16} />
           </button>
         {/if}
